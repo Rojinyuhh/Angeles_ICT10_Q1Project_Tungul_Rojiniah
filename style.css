@@ -1,0 +1,398 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri';
+    background-repeat: no-repeat;
+    background-position: center top;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-size: 100% auto;
+}
+
+body.SKU-Page {
+    background-image: url('images/Jollibee bg.png');
+}
+
+body.Receipt-Page {
+    background-image: url('images/Jollibee bg2.png');
+}
+
+
+/* NAV BAR */
+
+nav {
+    height: 65px;
+    background: #1f0101db;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+}
+
+.logo img{
+    height: 50px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+    opacity: 0.75;
+    transform: scale(1.03);
+}
+.nav-links a:active {
+    transform: scale(0.97);
+}
+
+
+/* CONTAINER */
+
+.container {
+    width: 750px;
+    max-width: 90%;
+    margin: 55px auto;
+    background: rgba(255, 255, 255, 0.816);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px #0003;
+}
+
+/* PAGE HEADER */
+
+header{
+    background: #3b0707;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+header h1{
+    margin: 0;
+    font-size: 35px;
+}
+
+/* CONTENT AREA */
+
+.data {
+    padding: 30px;
+}
+
+/* --- RECEIPT PAGE --- */
+
+header h1, 
+.menu-quantity,
+.receipt-line,
+.total{
+    font-family: Georgia;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid #eee;
+    border-radius: 12px;
+    padding: 17px 18px;
+    margin-bottom: 10px;
+    background: white;
+    transition: 0.2s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.234);
+}
+
+.menu-item:hover {
+    border-color: #e5174080;
+    box-shadow: 0 3px 10px #0001;
+}
+
+.menu-box {
+    display: flex;
+    gap: 15px;
+    margin-right: auto;
+    margin-left: 25px;
+}
+
+.menu-checkbox {
+    width: 23px;
+    height: 23px;
+    accent-color: #e5173f;
+    cursor: pointer;
+}
+
+.food-name {
+    font-size: 17px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+}
+
+.menu-quantity {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #0a7c1b;
+    margin-right: 10px;
+}
+
+.quantity-input {
+    width: 60px;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 20px;
+    text-align: center;
+    display: none;
+}
+
+.quantity-input:focus {
+    outline: none;
+    border-color: #e5173f;
+    box-shadow: 0 0 0 3px #e5174016;
+}
+
+.menu-img {
+    width: 60px;
+    min-width: 60px;
+}
+
+.menu-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* BUTTONS */
+
+button{
+    width: 100%;
+    padding: 15px;
+    margin-top: 18px;
+    border: 0;
+    border-radius: 10px;
+    background: #e5173f;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+button:hover{
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+button:active{
+    transform: translateY(1px);
+}
+
+/* RECEIPT */
+
+.receipt {
+    background: #f8f9fb;
+    border-radius: 12px;
+    padding: 22px;
+    margin-top: 15px;
+}
+
+.receipt-title {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.receipt-subtitle {
+    text-align: center;
+    color: #777;
+    margin: 6px 0 18px;
+}
+
+.receipt-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.receipt-line span:last-child {
+    font-weight: bold;
+    color: #0a7c1b;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 16px;
+}
+
+/* --- SKU PAGE --- */
+
+form {
+    margin-bottom: 18px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: bold;
+    color: #333;
+    font-size: 25px;
+}
+
+form input,
+form select {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 18px;
+    border: 1.5px solid rgba(73, 74, 77, 0.362);
+    border-radius: 10px;
+    font-size: 18px;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+form input:focus,
+form select:focus {
+    border-color: #e5173f;
+    box-shadow: 0 0 0 3px #e5174016
+}
+
+form select {
+    background: white;
+    cursor: pointer;
+}
+
+form input::placeholder {
+    color: #999;
+}
+
+input,
+select,
+button {
+    font-family: inherit;
+}
+
+/* SKU RESULT */
+
+.result {
+    margin: 25px 30px 30px;
+    padding: 20px;
+    background: #f3f6fa;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.result h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.sku-code {
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    color: #e5173f;
+    margin: 15px 0;
+    word-break: break-word;
+}
+
+#sku_details {
+    color: #666;
+    font-size: 20px;
+}
+
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 600px) {
+
+    nav {
+        padding: 0 20px;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    .container {
+        margin: 25px auto;
+        max-width: 94%;
+    }
+
+    .data {
+        padding: 20px;
+    }
+
+    .menu-item {
+        padding: 14px;
+    }
+
+    .menu-box {
+        gap: 10px;
+    }
+
+    .menu-img {
+        width: 50px;
+        min-width: 50px;
+    }
+
+    .food-name {
+        font-size: 15px;
+    }
+
+    .menu-quantity {
+        gap: 8px;
+    }
+
+    .quantity-input {
+        width: 50px;
+    }
+
+    .sku-code {
+        font-size: 25px;
+        letter-spacing: 3px;
+    }
+
+    .result {
+        margin: 20px;
+    }
+}
+
+/* FOOTER */
+
+.container-fluid {
+    background: #1f010167;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0;
+    font-size: 16px;
+    color: #000000;
+    font-weight: bold;
+}

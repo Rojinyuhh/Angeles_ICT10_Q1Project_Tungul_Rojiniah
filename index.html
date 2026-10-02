@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jollibee Order</title>
+
+    <!-- PyScript -->
+   <link rel="stylesheet"
+         href="https://pyscript.net/releases/2025.2.4/core.css">
+
+   <script type="module"
+           src="https://pyscript.net/releases/2025.2.4/core.js">
+   </script>
+   <link rel="stylesheet" href="style.css">
+
+</head>
+<body class="Receipt-Page">
+
+    <nav>
+        <div class="logo">
+            <img src="images/logo.png" alt="Jollibee Logo">
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Order</a>
+            <a href="SKU.html">SKU Generator</a>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <header class="header">
+            <div class="menu-title">
+                <h1>Menu</h1>
+            </div>
+        </header>
+
+        <div class="data">
+
+            <!--MAIN-->
+                <!--CHICKENJOY-->
+                <div class="menu-item">
+                        <div class="menu-img">
+                            <img src="images/Chickenjoy.avif">
+                        </div>
+                    <div class="menu-box">
+                        <input class="menu-checkbox" type="checkbox" id="chickjoy" py-change="toggle_quantity">
+                        <label for="chickjoy" class="food-name">Chickenjoy</label>
+                    </div>
+                    <div class="menu-quantity">
+                        <input type="number" id="chickjoy_qty" class="quantity-input" value="1" min="1">
+                        <span>₱106</span>
+                    </div>
+                </div>
+
+                <!--YUMBURGER-->
+                <div class="menu-item">
+                    <div class="menu-img">
+                            <img src="images/Yumburger.avif">
+                    </div>
+                    <div class="menu-box">
+                        <input class="menu-checkbox" type="checkbox" id="yburger" py-change="toggle_quantity">
+                        <label for="yburger" class="food-name">Yumburger</label>
+                    </div>
+                    <div class="menu-quantity">
+                        <input type="number" id="yburger_qty" class="quantity-input" value="1" min="1">
+                        <span>₱40</span>
+                    </div>
+                </div>
+
+                <!--SPAGHETTI-->
+                <div class="menu-item">
+                    <div class="menu-img">
+                            <img src="images/Spaghetti.avif">
+                    </div>
+                    <div class="menu-box">
+                        <input class="menu-checkbox" type="checkbox" id="spag" py-change="toggle_quantity">
+                        <label for="spag" class="food-name">Jolly Spaghetti</label>
+                    </div>
+                    <div class="menu-quantity">
+                        <input type="number" id="spag_qty" class="quantity-input" value="1" min="1">
+                        <span>₱78</span>
+                    </div>
+                </div>
+
+                <!--BURGERSTEAK-->
+                <div class="menu-item">
+                    <div class="menu-img">
+                            <img src="images/Burger steak.avif">
+                    </div>
+                    <div class="menu-box">
+                        <input class="menu-checkbox" type="checkbox" id="bsteak" py-change="toggle_quantity">
+                        <label for="bsteak" class="food-name">Burger Steak</label>
+                    </div>
+                    <div class="menu-quantity">
+                        <input type="number" id="bsteak_qty" class="quantity-input" value="1" min="1">
+                        <span>₱84</span>
+                    </div>
+                </div>
+        
+            <!--SIDES-->
+                <!--RICE-->
+                <div class="menu-item">
+                    <div class="menu-img">
+                            <img src="images/Rice.avif">
+                    </div>
+                    <div class="menu-box">
+                        <input class="menu-checkbox" type="checkbox" id="rice" py-change="toggle_quantity">
+                        <label for="rice" class="food-name">Rice</label>
+                    </div>
+                    <div class="menu-quantity">
+                        <input type="number" id="rice_qty" class="quantity-input" value="1" min="1">
+                        <span>₱46</span>
+                    </div>
+                </div>
+
+                <!--JOLLY FRIES-->
+                <div class="menu-item">
+                    <div class="menu-img">
+                            <img src="images/Fries.avif">
+                    </div>
+                    <div class="menu-box">
+                        <input class="menu-checkbox" type="checkbox" id="fries" py-change="toggle_quantity">
+                        <label for="fries" class="food-name">Jolly Crispy Fries</label>
+                    </div>
+                    <div class="menu-quantity">
+                        <input type="number" id="fries_qty" class="quantity-input" value="1" min="1">
+                        <span>₱67</span>
+                    </div>
+                </div>
+
+                <!--GRAVY-->
+                <div class="menu-item">
+                    <div class="menu-img">
+                            <img src="images/Chickenjoy Gravy.avif">
+                    </div>
+                    <div class="menu-box">
+                        <input class="menu-checkbox" type="checkbox" id="gravy" py-change="toggle_quantity">
+                        <label for="gravy" class="food-name">Chickenjoy Gravy</label>
+                    </div>
+                    <div class="menu-quantity">
+                        <input type="number" id="gravy_qty" class="quantity-input" value="1" min="1">
+                        <span>₱18</span>
+                    </div>
+                </div>
+
+            <!--BEVERAGES-->
+                <!--PINEAPPLE-->
+                <div class="menu-item">
+                    <div class="menu-img">
+                            <img src="images/Pineapple Juice.avif">
+                    </div>
+                    <div class="menu-box">
+                        <input class="menu-checkbox" type="checkbox" id="pjuice" py-change="toggle_quantity">
+                        <label for="pjuice" class="food-name">Pineapple Juice</label>
+                    </div>
+                    <div class="menu-quantity">
+                        <input type="number" id="pjuice_qty" class="quantity-input" value="1" min="1">
+                        <span>₱66</span>
+                    </div>
+                </div>
+
+                <!--ICED LATTE-->
+                <div class="menu-item">
+                    <div class="menu-img">
+                            <img src="images/Iced Latte.avif">
+                    </div>
+                    <div class="menu-box">
+                        <input class="menu-checkbox" type="checkbox" id="ilat" py-change="toggle_quantity">
+                        <label for="ilat" class="food-name">Iced Latte</label>
+                    </div>
+                    <div class="menu-quantity">
+                        <input type="number" id="ilat_qty" class="quantity-input" value="1" min="1">
+                        <span>₱87</span>
+                    </div>
+                </div>
+
+                <!--ORANGE JUICE-->
+                <div class="menu-item">
+                    <div class="menu-img">
+                            <img src="images/Orange Juice.avif">
+                    </div>
+                    <div class="menu-box">
+                        <input class="menu-checkbox" type="checkbox" id="oj" py-change="toggle_quantity">
+                        <label for="oj" class="food-name">Orange Juice</label>
+                    </div>
+                    <div class="menu-quantity">
+                        <input type="number" id="oj_qty" class="quantity-input" value="1" min="1">
+                        <span>₱77</span>
+                    </div>
+                </div>
+
+                <!--COKE FLOAT-->
+                <div class="menu-item">
+                    <div class="menu-img">
+                            <img src="images/Coke Float.avif">
+                    </div>
+                    <div class="menu-box">
+                        <input class="menu-checkbox" type="checkbox" id="cokef" py-change="toggle_quantity">
+                        <label for="cokef" class="food-name">Coke Float</label>
+                    </div>
+                    <div class="menu-quantity">
+                        <input type="number" id="cokef_qty" class="quantity-input" value="1" min="1">
+                        <span>₱84</span>
+                    </div>
+                </div>
+
+            <button py-click="create_order">Create Order</button>
+
+                <div id="receipt" class="receipt" style="display: none;">
+                    <div class="receipt-title">Jollibee</div>
+                    <div class="receipt-subtitle">B&T CORPORATION</div>
+
+                    <!--CHICKENJOY-->
+                    <div class="receipt-line" id="chickjoy_receipt" style="display: none;">
+                        <span id="chickjoy_name">ChickenJoy - 1</span>
+                        <span id="chickjoy_price">₱106</span>
+                    </div>
+
+                    <!--YUMBURGER-->
+                    <div class="receipt-line" id="yburger_receipt" style="display: none;">
+                        <span id="yburger_name">Yumburger - 1</span>
+                        <span id="yburger_price">₱40</span>
+                    </div>
+
+                    <!--SPAGHETTI-->
+                    <div class="receipt-line" id="spag_receipt" style="display: none;">
+                        <span id="spag_name">Jolly Spaghetti - 1</span>
+                        <span id="spag_price">₱78</span>
+                    </div>
+
+                    <!--BURGERSTEAK-->
+                    <div class="receipt-line" id="bsteak_receipt" style="display: none;">
+                        <span id="bsteak_name">Burger Steak - 1</span>
+                        <span id="bsteak_price">₱84</span>
+                    </div>
+
+                    <!--RICE-->
+                    <div class="receipt-line" id="rice_receipt" style="display: none;">
+                        <span id="rice_name">Rice - 1</span>
+                        <span id="rice_price">₱46</span>
+                    </div>
+
+                    <!--JOLLY FRIES-->
+                    <div class="receipt-line" id="fries_receipt" style="display: none;">
+                        <span id="fries_name">Jolly Crispy Fries - 1</span>
+                        <span id="fries_price">₱67</span>
+                    </div>
+
+                    <!--GRAVY-->
+                    <div class="receipt-line" id="gravy_receipt" style="display: none;">
+                        <span id="gravy_name">Chickenjoy Gravy - 1</span>
+                        <span id="gravy_price">₱18</span>
+                    </div>
+
+                    <!--PINEAPPLE JUICE-->
+                    <div class="receipt-line" id="pjuice_receipt" style="display: none;">
+                        <span id="pjuice_name">Pineapple Juice - 1</span>
+                        <span id="pjuice_price">₱66</span>
+                    </div>
+
+                    <!--ICED LATTE-->
+                    <div class="receipt-line" id="ilat_receipt" style="display: none;">
+                        <span id="ilat_name">Iced Latte - 1</span>
+                        <span id="ilat_price">₱87</span>
+                    </div>
+
+                    <!--ORANGE JUICE-->
+                    <div class="receipt-line" id="oj_receipt" style="display: none;">
+                        <span id="oj_name">Minute Maid Orange Juice - 1</span>
+                        <span id="oj_price">₱77</span>
+                    </div>
+                    
+                    <!--COKE FLOAT-->
+                    <div class="receipt-line" id="cokef_receipt" style="display: none;">
+                        <span id="cokef_name">Coke Float - 1</span>
+                        <span id="cokef_price">₱84</span>
+                    </div>
+                    
+                    <div class="total">
+                        <span>Total</span>
+                        <span id="receipt_total">₱0</span>
+                    </div>
+                </div>
+
+            
+
+        </div>
+
+    </div>
+
+    <div class="container-fluid">
+        <footer>
+            <p>1st Quarter Project | Bae & Tungul © 2026 </p>
+        </footer>
+    </div>
+
+    <py-script src="main.py"></py-script>
+
+</body>
+</html>

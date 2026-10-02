@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jollibee SKU Generator</title>
+
+    <!-- PyScript -->
+   <link rel="stylesheet"
+         href="https://pyscript.net/releases/2025.2.4/core.css">
+
+   <script type="module"
+           src="https://pyscript.net/releases/2025.2.4/core.js">
+   </script>
+   <link rel="stylesheet" href="style.css">
+
+</head>
+<body class="SKU-Page">
+
+    <nav>
+        <div class="logo">
+            <img src="images/logo.png" alt="Jollibee Logo">
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Order</a>
+            <a href="SKU.html">SKU Generator</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>SKU Generator</h1>
+        </header>
+
+        <div class="data">
+            <form>
+                <label for="category">Category</label>
+                <select name="category" id="category">
+                        <option>Main</option>
+                        <option>Sides</option>
+                        <option>Beverages</option>
+                </select>
+
+                <label for="product">Product Name</label>
+                <input id="product" placeholder="Example: Chickenjoy">
+
+                <label for="stock">Stock Quantity</label>
+                <input id="stock" type="number" min="0" placeholder="Example: 25">
+            </form>
+            <button type="button" py-click="generate_sku">Generate SKU</button>
+        </div>
+
+        <div class="result">
+            <h3>Your Generated SKU</h3>
+            <div class="sku-code" id="sku_code"></div>
+            <div id="sku_details"></div>
+        </div>
+
+    </div>
+
+    <div class="container-fluid">
+        <footer>
+            <p>1st Quarter Project | Bae & Tungul © 2026 </p>
+        </footer>
+    </div>
+
+    <py-script src="main.py"></py-script>
+</body>
+</html>
